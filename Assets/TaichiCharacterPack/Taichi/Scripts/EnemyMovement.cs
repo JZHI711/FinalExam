@@ -6,6 +6,10 @@ public class EnemyMovement : MonoBehaviour {
     Transform player;
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
+   // EnemyAttack enemyAttack;
+    Animator anim;
+    CapsuleCollider capsuleCollider;
+    bool Ismoving ;
     UnityEngine.AI.NavMeshAgent nav;
     enum AIStatus {Idle,Run,Hit,Damage}
     /*------------------------*/
@@ -18,27 +22,35 @@ public class EnemyMovement : MonoBehaviour {
 
      player = GameObject.FindGameObjectWithTag("Player").transform;
      playerHealth = player.GetComponent<PlayerHealth>();
-        enemyHealth = GetComponent<EnemyHealth>();
-        nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+     enemyHealth = GetComponent<EnemyHealth>();
+    // enemyAttack = GetComponent<EnemyAttack>();
+     nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
+     anim = GetComponent<Animator>();
+     
     }
    
     void Update (){
-        if (Vector3.Distance(transform.position, player.position) < seeRange)
+        if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         {
-            if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
+            if (Vector3.Distance(transform.position, player.position) < seeRange)
             {
+                Move();
                 nav.SetDestination(player.position);
 
+            } else if (Vector3.Distance(transform.position, player.position)<attackRange)
+            {
+                
             }
             else
             {
-                nav.enabled = false;
+                
             }
+            nav.enabled = false;
+            UnMove();
         }
         else
         {
-
-
+           
         }
 	}
     void OnDrawGizmos()
@@ -48,5 +60,13 @@ public class EnemyMovement : MonoBehaviour {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-
+    void Move()
+    {
+        Ismoving = true;
+        anim.SetBool("Moving", Ismoving);
+    }
+    void UnMove() {
+        Ismoving = false;
+        anim.SetBool("Moving", Ismoving);
+    }
 }
