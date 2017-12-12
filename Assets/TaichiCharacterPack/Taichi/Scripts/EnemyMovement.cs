@@ -6,7 +6,8 @@ public class EnemyMovement : MonoBehaviour {
     Transform player;
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
-   // EnemyAttack enemyAttack;
+ 
+    EnemyAttack enemyAttack;
     Animator anim;
     CapsuleCollider capsuleCollider;
     bool Ismoving ;
@@ -23,7 +24,7 @@ public class EnemyMovement : MonoBehaviour {
      player = GameObject.FindGameObjectWithTag("Player").transform;
      playerHealth = player.GetComponent<PlayerHealth>();
      enemyHealth = GetComponent<EnemyHealth>();
-    // enemyAttack = GetComponent<EnemyAttack>();
+     enemyAttack = GetComponent<EnemyAttack>();
      nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
      anim = GetComponent<Animator>();
      
@@ -39,34 +40,35 @@ public class EnemyMovement : MonoBehaviour {
 
             } else if (Vector3.Distance(transform.position, player.position)<attackRange)
             {
+                nav.enabled = false;
                 
             }
             else
             {
-                
+                UnMove();
             }
-            nav.enabled = false;
-            UnMove();
+           
         }
         else
         {
            
         }
 	}
-    void OnDrawGizmos()
+   private void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, seeRange);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
-    void Move()
+    public void Move()
     {
         Ismoving = true;
         anim.SetBool("Moving", Ismoving);
     }
-    void UnMove() {
+    public void UnMove() {
         Ismoving = false;
         anim.SetBool("Moving", Ismoving);
     }
+
 }
