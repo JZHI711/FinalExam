@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5f63706893b994f95f43bc7d9bcb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seeRange: 3
+  seeRange: 10
   attackRange: 1
 --- !u!1001 &1570429429
 Prefab:
