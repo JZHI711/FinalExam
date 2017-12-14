@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour {
-    public int startHealth;
+    public int startingHealth = 100;
     public int currentHealth;
 
 
@@ -11,5 +11,11 @@ public class EnemyHealth : MonoBehaviour {
     ParticleSystem hitParticle;
     CapsuleCollider capssuleCollider;
     bool Die;
+
+    void Awake()
+    {
+      
+        currentHealth = startingHealth;
+    }
 
 }

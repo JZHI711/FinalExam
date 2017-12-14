@@ -7,15 +7,15 @@ public class EnemyMovement : MonoBehaviour {
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
  
-    EnemyAttack enemyAttack;
+    //EnemyAttack enemyAttack;
     Animator anim;
     CapsuleCollider capsuleCollider;
     bool Ismoving ;
     UnityEngine.AI.NavMeshAgent nav;
     enum AIStatus {Idle,Run,Hit,Damage}
     /*------------------------*/
-    public int seeRange = 3;
-    public int attackRange = 1;
+    public int seeRange = 6;
+    public int attackRange = 2;
     /*------------------------*/
 
     void Awake()
@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour {
      player = GameObject.FindGameObjectWithTag("Player").transform;
      playerHealth = player.GetComponent<PlayerHealth>();
      enemyHealth = GetComponent<EnemyHealth>();
-     enemyAttack = GetComponent<EnemyAttack>();
+    // enemyAttack = GetComponent<EnemyAttack>();
      nav = GetComponent<UnityEngine.AI.NavMeshAgent>();
      anim = GetComponent<Animator>();
      
@@ -33,25 +33,23 @@ public class EnemyMovement : MonoBehaviour {
     void Update (){
         if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         {
-            if (Vector3.Distance(transform.position, player.position) < seeRange)
+            if (Vector3.Distance(transform.position, player.position) < seeRange && Vector3.Distance(transform.position, player.position) > attackRange)
             {
                 Move();
                 nav.SetDestination(player.position);
 
-            } else if (Vector3.Distance(transform.position, player.position)<attackRange)
+            } 
+            else if(Vector3.Distance(transform.position, player.position) <= attackRange)
             {
-                nav.enabled = false;
-                
-            }
-            else
-            {
+                anim.SetTrigger("Hit");
                 UnMove();
+                
             }
            
         }
         else
         {
-           
+            nav.enabled = false;
         }
 	}
    private void OnDrawGizmos()

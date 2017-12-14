@@ -6,11 +6,12 @@ public class EnemyAttack : MonoBehaviour
     public float timeBetweenAttacks = 0.5f;
     public int attackDamage = 10;
 
-
+    Transform playerPos;
     Animator anim;
     GameObject player;
     PlayerHealth playerHealth;
     EnemyHealth enemyHealth;
+    EnemyMovement enemyMovement;
     bool playerInRange;
     float timer;
 
@@ -18,24 +19,28 @@ public class EnemyAttack : MonoBehaviour
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerPos =player.transform;
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
+        enemyMovement = GetComponent<EnemyMovement>();
         anim = GetComponent<Animator>();
+       
     }
 
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player )
         {
             playerInRange = true;
+            
         }
     }
 
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player )
         {
             playerInRange = false;
         }
@@ -46,7 +51,7 @@ public class EnemyAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
+        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0 )
         {
             Attack();
         }
@@ -62,7 +67,7 @@ public class EnemyAttack : MonoBehaviour
     {
         timer = 0f;
 
-        if (playerHealth.currentHealth > 0)
+        if (playerHealth.currentHealth > 0 )
         {
             anim.SetTrigger("Hit");
             playerHealth.TakeDamage(attackDamage);
