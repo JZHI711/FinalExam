@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour {
     enum AIStatus {Idle,Run,Hit,Damage}
     /*------------------------*/
     public int seeRange = 6;
-    public int attackRange = 2;
+    public float attackRange = 1;
     /*------------------------*/
 
     void Awake()
@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour {
             } 
             else if(Vector3.Distance(transform.position, player.position) <= attackRange)
             {
-                anim.SetTrigger("Hit");
+               
                 UnMove();
                 
             }

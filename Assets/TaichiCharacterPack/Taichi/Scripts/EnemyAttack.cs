@@ -49,9 +49,10 @@ public class EnemyAttack : MonoBehaviour
 
     void Update()
     {
+
         timer += Time.deltaTime;
 
-        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0 )
+        if (timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0 && Vector3.Distance(transform.position, playerPos.position) <= enemyMovement.attackRange)
         {
             Attack();
         }
@@ -69,7 +70,7 @@ public class EnemyAttack : MonoBehaviour
 
         if (playerHealth.currentHealth > 0 )
         {
-            anim.SetTrigger("Hit");
+            anim.SetTrigger("Attack");
             playerHealth.TakeDamage(attackDamage);
         }
     }

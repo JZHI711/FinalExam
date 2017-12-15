@@ -302,6 +302,11 @@ Prefab:
       propertyPath: startHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 136930907850592304, guid: 36e983a1bece6684bae27db4a59d4020,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114799270735362840, guid: 36e983a1bece6684bae27db4a59d4020, type: 2}
     - {fileID: 114007235120072398, guid: 36e983a1bece6684bae27db4a59d4020, type: 2}
@@ -469,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seeRange: 6
-  attackRange: 2
+  attackRange: 1
 --- !u!1001 &1570429429
 Prefab:
   m_ObjectHideFlags: 0
@@ -544,6 +549,28 @@ Prefab:
     - target: {fileID: 114975993469893280, guid: 4cc4a423da0b2644fb66f78f40b4d07d,
         type: 2}
       propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055647546828320, guid: 4cc4a423da0b2644fb66f78f40b4d07d, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055647546828320, guid: 4cc4a423da0b2644fb66f78f40b4d07d, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055647546828320, guid: 4cc4a423da0b2644fb66f78f40b4d07d, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 82107581375726326, guid: 4cc4a423da0b2644fb66f78f40b4d07d,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114975993469893280, guid: 4cc4a423da0b2644fb66f78f40b4d07d,
+        type: 2}
+      propertyPath: startingHealth
       value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
