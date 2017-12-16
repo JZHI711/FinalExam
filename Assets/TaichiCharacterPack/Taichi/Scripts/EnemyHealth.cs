@@ -14,8 +14,15 @@ public class EnemyHealth : MonoBehaviour {
 
     void Awake()
     {
-      
+        anim = GetComponent<Animator>();
         currentHealth = startingHealth;
     }
+    void Update()
+    {
+        if (currentHealth==0)
+        {
+            anim.SetTrigger("Die");
+        }
 
+    }
 }
