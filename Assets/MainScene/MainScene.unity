@@ -473,8 +473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5f63706893b994f95f43bc7d9bcb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seeRange: 6
-  attackRange: 1
+  seeRange: 3
+  attackRange: 0.8
 --- !u!1001 &1570429429
 Prefab:
   m_ObjectHideFlags: 0

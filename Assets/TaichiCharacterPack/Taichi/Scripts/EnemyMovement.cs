@@ -14,8 +14,8 @@ public class EnemyMovement : MonoBehaviour {
     UnityEngine.AI.NavMeshAgent nav;
     enum AIStatus {Idle,Run,Hit,Damage}
     /*------------------------*/
-    public int seeRange = 6;
-    public float attackRange = 1;
+    public int seeRange = 3;
+    public float attackRange = 0.8f;
     /*------------------------*/
 
     void Awake()
@@ -39,16 +39,17 @@ public class EnemyMovement : MonoBehaviour {
                 nav.SetDestination(player.position);
 
             } 
-            else if(Vector3.Distance(transform.position, player.position) <= attackRange)
+            else if(Vector3.Distance(transform.position, player.position) <= attackRange|| Vector3.Distance(transform.position, player.position) >= seeRange)
             {
                
                 UnMove();
                 
             }
-           
+            
         }
         else
         {
+           
             nav.enabled = false;
         }
 	}
