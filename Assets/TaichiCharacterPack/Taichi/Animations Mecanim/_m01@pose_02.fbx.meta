@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 57f0f90d53b19e445acd439b21928699
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: atama_n
     100002: b_lip_center
@@ -365,12 +365,10 @@ ModelImporter:
     400358: u_lip_center
     7400000: pose_02
     9500000: //RootNode
-  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -381,7 +379,7 @@ ModelImporter:
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
       rotation in copied configuration does not match rotation in animation file:\n\t'Spine1'
       : rotation error = 3.431062 deg\n\t'Spine3' : rotation error = 3.410381 deg\n\t'LeftArmRoll'
-      : rotation error = 5.514300 deg\n\t'LeftForeArmRoll' : rotation error = 1.331909
+      : rotation error = 5.514299 deg\n\t'LeftForeArmRoll' : rotation error = 1.331909
       deg\n\t'RightArmRoll' : rotation error = 8.648636 deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
@@ -397,7 +395,6 @@ ModelImporter:
       humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: a40a1a126dbaaf443b653371413cde3a
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: atama_n
     100002: b_lip_center
@@ -365,12 +365,10 @@ ModelImporter:
     400358: u_lip_center
     7400000: down_22
     9500000: //RootNode
-  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -381,7 +379,7 @@ ModelImporter:
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
       rotation in copied configuration does not match rotation in animation file:\n\t'Spine1'
       : rotation error = 11.320650 deg\n\t'Spine3' : rotation error = 15.902856 deg\n\t'LeftArmRoll'
-      : rotation error = 11.917197 deg\n\t'LeftForeArmRoll' : rotation error = 35.933578
+      : rotation error = 11.917196 deg\n\t'LeftForeArmRoll' : rotation error = 35.933578
       deg\n\t'RightArmRoll' : rotation error = 8.742149 deg\n\t'RightForeArmRoll'
       : rotation error = 1.414493 deg\n"
     animationImportErrors: 
@@ -398,7 +396,6 @@ ModelImporter:
       humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
